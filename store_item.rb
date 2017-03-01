@@ -44,10 +44,38 @@ puts dog1.age
 #meta programming: attr_reader :first_name, :last_name
 
 
-class Manager < Dog
-  def send_report
-    puts "sending email..."
-    #use email sending library
-    puts "Email sent!"
+# class Dog_parent < Dogs
+#   attr_reader :breed, :color, :temperment, :age, :puppies
+#   attr_writer :color
+
+#   def initialize(input_options)
+#     super
+#     @puppies= input_options[:dog]
+#   end
+#   def send_report
+#     puts "sending email..."
+#     #use email sending library
+#     puts "Email sent!"
+#   end
+# end
+
+# mom=Dog_parent.new(breed: "german shephard",color: "brown and black", temperment: "smug", age:"8", puppies:[dog1, dog2] )
+# puts mom.puppies
+
+class Food < Dogs
+  attr_accessor :shelf_life
+  def initialize(input_options)
+    super
+    @shelf_life=5
+  end
+
+  def print_info
+    super 
+    puts "and has a shelf life of "+@shelf_life.to_s
   end
 end
+
+food1=Food.new breed: "pug", color: "brown", temperment: "happy", age: "4"
+puts food1.print_info
+food1.shelf_life=6 
+puts food1.shelf_life
