@@ -1,5 +1,4 @@
 module Vehicle
-  attr_accessor
   def initialize()
     @speed = 0
     @direction = 'north'
@@ -19,6 +18,10 @@ end
 
 class Car
   include Vehicle
+  def initialize()
+    @speed = 0
+    @direction = 'north'
+  end
   def honk_horn
     puts "Beeeeeeep!"
   end
@@ -26,6 +29,10 @@ end
 
 class Bike
   include Vehicle
+  def initialize()
+    @speed = 0
+    @direction = 'north'
+  end
   def ring_bell
     puts "Ring ring!"
   end
